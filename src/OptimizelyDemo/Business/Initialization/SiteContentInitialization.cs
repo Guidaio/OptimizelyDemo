@@ -101,25 +101,28 @@ public class SiteContentInitialization : IInitializableModule
 
     private static bool EnsureHosts(InProcessWebsite website)
     {
-        // One Primary host per locale; Edit host for HTTPS launch profile.
-        var changed = false;
-        changed |= AddHostIfMissing(website, "localhost:5001", ApplicationHostType.Primary);
-        changed |= AddHostIfMissing(website, "localhost:5000", ApplicationHostType.Edit);
-        return changed;
-    }
+        // Dev uses HTTP on :5001 for site + admin. An Edit host on :5000 forces
+        // CMS post-login redirects to that authority and breaks the :5001 flow.
+        const string httpDevHost = "localhost:5001";
 
-    private static bool AddHostIfMissing(
-        InProcessWebsite website,
-        string authority,
-        ApplicationHostType type)
-    {
-        if (website.Hosts.Any(h =>
-                string.Equals(h.Authority, authority, StringComparison.OrdinalIgnoreCase)))
+        var desired = new ApplicationHost(httpDevHost)
+        {
+            Type = ApplicationHostType.Primary,
+            PreferredUrlScheme = UrlScheme.Http
+        };
+
+        var alreadyOk = website.Hosts.Count == 1
+            && string.Equals(website.Hosts[0].Authority, httpDevHost, StringComparison.OrdinalIgnoreCase)
+            && website.Hosts[0].Type == ApplicationHostType.Primary
+            && website.Hosts[0].PreferredUrlScheme == UrlScheme.Http;
+
+        if (alreadyOk)
         {
             return false;
         }
 
-        website.Hosts.Add(new ApplicationHost(authority) { Type = type });
+        website.Hosts.Clear();
+        website.Hosts.Add(desired);
         return true;
     }
 }
