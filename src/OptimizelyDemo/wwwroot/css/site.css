@@ -1,0 +1,156 @@
+/* OptimizelyDemo — Phase 3 site styles (lightweight) */
+
+:root {
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-text: #1a2332;
+  --color-muted: #5c6b7a;
+  --color-accent: #005eb8;
+  --color-accent-hover: #004a91;
+  --color-border: #d8dee6;
+  --font-sans: "Segoe UI", system-ui, sans-serif;
+  --space: 1.25rem;
+  --max: 52rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner,
+.site-footer__inner,
+.site-main {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+}
+
+.site-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-main {
+  flex: 1;
+  padding: 2rem 0 3rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer__inner {
+  padding: 1rem 0;
+}
+
+.page-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.page-body {
+  margin-bottom: 2rem;
+}
+
+.page-body p:first-child {
+  margin-top: 0;
+}
+
+.main-content-area {
+  display: grid;
+  gap: var(--space);
+}
+
+/* Hero block */
+.hero {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 20rem;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.hero__subtitle {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.hero__cta {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.55rem 1.1rem;
+  background: var(--color-accent);
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.hero__cta:hover {
+  background: var(--color-accent-hover);
+}

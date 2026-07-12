@@ -1,0 +1,41 @@
+@using OptimizelyDemo.Models.Pages
+@{
+    var page = ViewData.Model as SitePageData;
+    var documentTitle = !string.IsNullOrWhiteSpace(page?.MetaTitle)
+        ? page!.MetaTitle
+        : (!string.IsNullOrWhiteSpace(page?.Title) ? page!.Title : page?.Name ?? "OptimizelyDemo");
+    var metaDescription = page?.MetaDescription;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@documentTitle</title>
+    @if (!string.IsNullOrWhiteSpace(metaDescription))
+    {
+        <meta name="description" content="@metaDescription" />
+    }
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-brand" href="/">OptimizelyDemo</a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="/Optimizely/CMS">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <p>Optimizely CMS demo — learning site</p>
+        </div>
+    </footer>
+</body>
+</html>

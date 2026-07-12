@@ -18,7 +18,7 @@ Inicializar repositorio git na raiz, `.gitignore` na raiz, historico logico por 
 ## Higiene minima (nesta atividade)
 
 Antes do primeiro commit, **redigir** em `.cursor/handoff/builder-return.md`:
-- Remover senha `[redacted]` e email; substituir por `(ver README local / criar no primeiro run)`
+- Remover senha e email em texto claro; substituir por `(ver README local / criar no primeiro run)`
 - Manter usuario `admin` ou `(configurado no Register)`
 
 README operacional completo fica para **Atividade B**.

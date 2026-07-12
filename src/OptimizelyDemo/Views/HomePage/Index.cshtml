@@ -1,19 +1,11 @@
 @model HomePage
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>@(string.IsNullOrWhiteSpace(Model.MetaTitle) ? Model.Title ?? Model.Name : Model.MetaTitle)</title>
-    @if (!string.IsNullOrWhiteSpace(Model.MetaDescription))
-    {
-        <meta name="description" content="@Model.MetaDescription" />
-    }
-</head>
-<body>
-    <h1>@Html.PropertyFor(m => m.Title)</h1>
-    <div>@Html.PropertyFor(m => m.MainBody)</div>
+
+<article class="page page--home">
+    <h1 class="page-title">@Html.PropertyFor(m => m.Title)</h1>
+    <div class="page-body">
+        @Html.PropertyFor(m => m.MainBody)
+    </div>
     <div class="main-content-area">
         @Html.PropertyFor(m => m.MainContentArea)
     </div>
-</body>
-</html>
+</article>
