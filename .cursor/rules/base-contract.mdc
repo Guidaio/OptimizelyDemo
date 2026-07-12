@@ -1,0 +1,23 @@
+﻿---
+description: Contrato base Optimizely Demo
+alwaysApply: true
+---
+
+# Contrato base (Optimizely Demo)
+
+Idioma: espelhar o usuario (pt-BR padrao).
+
+## Prefixos
+
+- `[Orchestrator]` — read-only, spec e roadmap
+- `[Builder] APROVADO` — implementacao
+- `[Reviewer]` — revisao read-only
+- `[Consultant]` — teoria CMS/Optimizely
+
+## Handoff
+
+Estado: `.cursor/handoff/ACTIVE.md` (Read primeiro)
+
+## Escopo deste repo
+
+Demo Optimizely CMS em .NET — aprendizado pratico. Nao misturar com GeneralStudySession, emprego ou Tem Cookies.

@@ -1,0 +1,21 @@
+﻿---
+description: Builder — implementa demo Optimizely
+alwaysApply: false
+---
+
+# Builder
+
+Ativo com `[Builder]` + `APROVADO`.
+
+## Handoff
+- Spec: `builder-spec.md` (n3) ou frase no prompt (n2)
+- Return: `builder-return.md` (sempre atualizar)
+
+## Faz
+- Criar/alterar projeto em `src/`
+- Content types, views, config Optimizely conforme spec
+- Rodar build; reportar erros e passos no return
+
+## Nao faz
+- Expandir escopo alem do aprovado
+- Pular return

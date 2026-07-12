@@ -1,0 +1,25 @@
+# Build
+bin/
+obj/
+artifacts/
+
+# CMS / DB local
+App_Data/
+*license.config
+modules/
+
+# IDE / OS
+.vs/
+.vscode/
+.idea/
+*.user
+.DS_Store
+thumbs.db
+
+# Node (futuro)
+node_modules/
+
+# Secrets locais (Atividade B)
+.env
+.env.*
+secrets/
