@@ -1,0 +1,30 @@
+# Build
+bin/
+obj/
+artifacts/
+
+# CMS / DB local
+App_Data/
+*license.config
+modules/
+
+# IDE / OS
+.vs/
+.vscode/
+.idea/
+*.user
+*.lock.json
+.nuget/
+packages/
+.DS_Store
+thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Node (futuro)
+node_modules/
+
+# Secrets locais
+.env
+.env.*
+secrets/
