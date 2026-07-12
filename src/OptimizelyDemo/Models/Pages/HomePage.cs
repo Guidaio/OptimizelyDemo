@@ -1,3 +1,7 @@
+using System.ComponentModel.DataAnnotations;
+using EPiServer.DataAbstraction;
+using OptimizelyDemo.Models.Blocks;
+
 namespace OptimizelyDemo.Models.Pages;
 
 [ContentType(
@@ -10,4 +14,11 @@ namespace OptimizelyDemo.Models.Pages;
     Include = [typeof(StandardPage)])]
 public class HomePage : SitePageData
 {
+    [Display(
+        Name = "Main content area",
+        Description = "Composable blocks (Hero only in Phase 2)",
+        GroupName = SystemTabNames.Content,
+        Order = 30)]
+    [AllowedTypes(typeof(HeroBlock))]
+    public virtual ContentArea? MainContentArea { get; set; }
 }

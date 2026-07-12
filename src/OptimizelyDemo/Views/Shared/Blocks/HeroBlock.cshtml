@@ -1,0 +1,19 @@
+@model HeroBlock
+<section class="hero-block">
+    @if (!string.IsNullOrWhiteSpace(Model.Title))
+    {
+        <h2>@Html.PropertyFor(m => m.Title)</h2>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.Subtitle))
+    {
+        <p>@Html.PropertyFor(m => m.Subtitle)</p>
+    }
+    @if (!ContentReference.IsNullOrEmpty(Model.Image))
+    {
+        <div>@Html.PropertyFor(m => m.Image)</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.CtaText) && Model.CtaLink is not null && !Model.CtaLink.IsEmpty())
+    {
+        <p><a href="@Model.CtaLink">@Model.CtaText</a></p>
+    }
+</section>
