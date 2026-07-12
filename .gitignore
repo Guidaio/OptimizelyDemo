@@ -22,4 +22,5 @@ node_modules/
 # Secrets locais (Atividade B)
 .env
 .env.*
-secrets/
+secrets/*
+!secrets/local.env.example

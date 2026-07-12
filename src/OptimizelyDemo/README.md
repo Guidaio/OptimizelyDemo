@@ -1,46 +1,19 @@
-# Empty CMS template
+# OptimizelyDemo (projeto CMS)
 
-## How to run
+Aplicação Optimizely CMS 13 empty + modelagem do demo (Home, Standard, Hero, templates).
 
-Chose one of the following options to get started. 
+**Guia operacional completo (pré-requisitos, run, URLs, admin, LocalDB):** ver o [README na raiz do repositório](../../README.md).
 
-### Windows
+## Run rápido
 
-Prerequisities
-- .NET SDK 10+
-- SQL Server 2017 Express LocalDB, compatability level 140 (or later)
+```powershell
+sqllocaldb start MSSQLLocalDB
+$env:ASPNETCORE_ENVIRONMENT = "Development"
+dotnet run --urls "http://localhost:5001" --no-launch-profile
+```
 
-```bash
-$ dotnet run
-````
+- Site: http://localhost:5001/
+- Admin: http://localhost:5001/Optimizely/CMS
+- Credenciais: copie `secrets/local.env.example` → `secrets/local.env` (na raiz do repo)
 
-### Any OS with Docker
-
-Prerequisities
-- Docker
-- Enable Docker support when applying the template
-- Review the .env file and make changes where necessary to the Docker-related variables
-
-```bash
-$ docker compose up
-````
-
-> Note that this Docker setup is just configured for local development. Follow this [guide to enable HTTPS](https://github.com/dotnet/dotnet-docker/blob/main/samples/run-aspnetcore-https-development.md).
-
-#### Reclaiming Docker Image Space
-
-1. Backup the App_Data/\${DB_NAME}.mdf and App_Data/\${DB_NAME}.ldf DB restoration files for safety
-2. Run `docker compose down --rmi all` to remove containers, networks, and images associated with the specific project instance
-3. In the future, run `docker compose up` anytime you want to recreate the images and containers
-
-### Any OS with external database server
-
-Prerequisities
-- .NET SDK 10+
-- SQL Server 2016 (or later) on a external server, e.g. Azure SQL
-
-Create an empty database on the external database server and update the connection string accordingly.
-
-```bash
-$ dotnet run
-````
+Template original Optimizely: pré-requisito .NET SDK 10+ e SQL LocalDB. Docker opcional não está habilitado neste demo.
